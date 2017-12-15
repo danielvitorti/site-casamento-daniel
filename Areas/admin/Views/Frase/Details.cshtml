@@ -1,0 +1,27 @@
+﻿@model casamento.Areas.admin.Models.Frase
+
+@{
+    ViewBag.Title = "Área Administrativa - Detalhes das Frases";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Frase</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.frase)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.frase)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Alterar", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Voltar para a listagem de frases", "Index")
+</p>

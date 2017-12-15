@@ -1,0 +1,59 @@
+﻿@model casamento.Areas.admin.Models.Noivos
+
+@{
+    ViewBag.Title = "Área Administrativa - Detalhes dos Noivos";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalhes dos Noivos</h2>
+
+<div>
+    <h4>Noivo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.introducao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.introducao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.imagem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.imagem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dataCadastro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dataCadastro)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Alterar", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Voltar para a listagem de noivos", "Index")
+</p>

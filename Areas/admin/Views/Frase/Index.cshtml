@@ -1,0 +1,34 @@
+﻿@model IEnumerable<casamento.Areas.admin.Models.Frase>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar nova" ,"Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Frase
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in ViewBag.fraseLista) {
+    <tr>
+        <td>
+            @item.frase
+        </td>
+        <td>
+            @Html.ActionLink("Alterar", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.id }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

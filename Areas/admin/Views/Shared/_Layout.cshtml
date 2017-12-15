@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+
+            @if (Session["usuarioLogadoID"] != null && Session["nomeUsuarioLogado"] !=null) {
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Administrativo", "Index", "index", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    
+                    <li>
+                        <a href="~/admin/noivos/index">Noivos</a>
+                    </li>
+
+                    <li>
+                        <a href="~/admin/convidados/index">Convidados</a>
+                    </li>
+                    <li>
+                        <a href="~/admin/padrinhos/index">Padrinhos</a>
+                    </li>
+
+                    <li>
+                        <a href="~/admin/galerias/index">Galeria</a>
+                    </li>
+
+                    <li>
+                        <a href="~/admin/imagensdestaque/index">Imagens em destaque</a>
+                    </li>
+                    <li>
+                        <a href="~/admin/historia/index">História</a>
+                    </li>
+                    <li>
+                        <a href="~/admin/endereco/index">Endereços</a>
+                    </li>
+                    <li>
+                        <a href="~/admin/mensagens/index">Mensagens</a>
+                    </li>
+                    <li>
+                        <a href="~/admin/login/logout">Sair</a>
+                    </li>
+                </ul>
+            </div>
+            }
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Desenvolvido por <a href="http://br.linkedin.com/in/danielmendesx86" target="_blank">Daniel Mendes</a></p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

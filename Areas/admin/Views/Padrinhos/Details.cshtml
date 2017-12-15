@@ -1,0 +1,43 @@
+﻿@model casamento.Areas.admin.Models.Padrinhos
+
+@{
+    ViewBag.Title = "Área Administrativa - Detalhes de padrinhos";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalhes de padrinhos</h2>
+
+<div>
+    <h4>Padrinhos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descricaoPadrinho)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descricaoPadrinho)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.imagem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.imagem)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Alterar", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Voltar para a listagem de padrinhos", "Index")
+</p>

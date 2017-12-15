@@ -1,0 +1,46 @@
+﻿@model casamento.Areas.admin.Models.Galeria
+
+@{
+    ViewBag.Title = "Área Administrativa - Detalhes de galeria de imagens";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalhes de galeria de imagens</h2>
+
+<div>
+    <h4>Galeria de imagens</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nomeGaleria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomeGaleria)
+
+            
+        </dd>
+
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.destaque)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.destaque)
+
+
+
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dataCadastro)
+        </dt>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Alterar", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Voltar para a listagem de galerias de imagem", "Index")
+</p>

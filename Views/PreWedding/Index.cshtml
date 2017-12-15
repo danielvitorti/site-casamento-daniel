@@ -1,0 +1,16 @@
+﻿@model IEnumerable<casamento.Models.PreWedding>
+
+@{
+    ViewBag.Title = "Confira algumas fotos do Pré Wedding";
+    Layout = "~/Views/Shared/_LayoutGaleria.cshtml";
+}
+
+<div id="main">
+    @foreach (var item in ViewBag.preWeddingLista)
+    {
+        <article class="thumb">
+            <a href="~/images/@item.imagemPreWedding" class="image">
+            <img src="~/images/@item.imagemPreWedding" alt="Daniel & Taynara" /></a>
+        </article>
+    }
+</div>

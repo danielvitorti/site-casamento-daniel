@@ -1,0 +1,46 @@
+﻿@model IEnumerable<casamento.Areas.admin.Models.Mensagem>
+
+@{
+    ViewBag.Title = "Área Administrativa - Mensagens";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Mensagens enviadas pelo site</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Enviado por
+        </th>
+        <th>
+            Mensagem
+        </th>
+        <th>
+            Data de Envio
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in ViewBag.mensagemLista) {
+    <tr>
+        <td>
+            @item.nome
+        </td>
+        <td>
+            @item.mensagem
+        </td>
+        <td>
+            @item.dataEnvio
+        </td>
+        <td>
+            @Html.ActionLink("Alterar", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.id }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

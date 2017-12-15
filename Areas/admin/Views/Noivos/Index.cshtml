@@ -1,0 +1,65 @@
+﻿@model IEnumerable<casamento.Areas.admin.Models.Noivos>
+
+@{
+    ViewBag.Title = "Área Administrativa - Noivos";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Noivos</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            
+            Nome
+        </th>
+        <th>
+            
+            Introdução
+        </th>
+        <th>
+            
+            Imagem
+        </th>
+        <th>
+            
+            Descrição
+        </th>
+        <th>
+            
+            Data de Cadastro
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in ViewBag.noivosLista) {
+    <tr>
+        <td>
+            @item.nome
+        </td>
+        <td>
+            @item.introducao
+        </td>
+        <td>
+            <div class="row">
+                <div class="col-lg-4">
+                    <img class="img-responsive img-thumbnail"  src="~/images/@item.imagem" alt="@item.imagem" title="@item.imagem" />
+                </div>
+            </div>
+        </td>
+        <td>
+            @item.descricao
+        </td>
+        <td>
+            @item.dataCadastro
+        </td>
+        <td>
+            @Html.ActionLink("Alterar", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.id }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

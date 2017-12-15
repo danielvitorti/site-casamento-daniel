@@ -1,0 +1,45 @@
+﻿@model IEnumerable<casamento.Areas.admin.Models.Endereco>
+@{
+    ViewBag.Title = "Área Administrativa  - Endereços";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Endereços</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar novo Endereço", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Link para a localização
+        </th>
+        <th>
+            Descrição do endereço
+        </th>
+        <th>
+            Título do endereço
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in ViewBag.enderecoLista) {
+    <tr>
+        <td>
+            @item.linkLocalizacao
+        </td>
+        <td>
+            @item.descricaoEndereco
+        </td>
+        <td>
+            @item.tituloEndereco
+        </td>
+        <td>
+            @Html.ActionLink("Alterar", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.id }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,24 @@
+﻿@model IEnumerable<casamento.Models.Padrinhos>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutSinglePage.cshtml";
+}
+
+<h2>Nossos padrinhos</h2>
+
+<br />
+
+@foreach (var item in ViewBag.padrinhosLista) {
+
+   <p>
+       @if(!String.IsNullOrEmpty(item.imagem))
+       {
+          <img src="~/images/@item.imagem" title="Imagem" />
+       }
+
+       <i>@item.nome</i>
+   </p>
+}
+
+

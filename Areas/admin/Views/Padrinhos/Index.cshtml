@@ -1,0 +1,47 @@
+﻿@model IEnumerable<casamento.Areas.admin.Models.Padrinhos>
+
+@{
+    ViewBag.Title = "Área Administrativa - Padrinhos Cadastrados";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Padrinhos</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar novo padrinho", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Nome
+        </th>
+        <th>
+            Descrição
+        </th>
+        <th>
+            Imagem
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in ViewBag.padrinhosLista) {
+    <tr>
+        <td>
+            
+            @item.nome
+        </td>
+        <td>
+            @item.descricaoPadrinho
+        </td>
+        <td>
+            <img src="~/images/@item.imagem" class="img-responsive img-thumbnail"  alt="@item.imagem" title="@item.imagem" />
+        </td>
+        <td>
+            @Html.ActionLink("Alterar", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.id }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

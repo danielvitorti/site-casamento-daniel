@@ -1,0 +1,43 @@
+﻿@model casamento.Areas.admin.Models.Historia
+
+@{
+    ViewBag.Title = "Área Administrativa - Detalhes da mensagem enviada";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalhes da mensagem enviadas</h2>
+
+<div>
+    <h4>Mensagem</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mensagem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mensagem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dataEnvio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dataEnvio)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Alterar", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Voltar para a listagem de mensagens", "Index")
+</p>

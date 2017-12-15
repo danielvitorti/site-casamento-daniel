@@ -1,0 +1,51 @@
+﻿@model IEnumerable<casamento.Models.ImagensDestaque>
+
+@{
+    ViewBag.Title = "Imagens em Destaque";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Imagens em Destaque</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar Nova", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Imagem
+        </th>
+        <th>
+            Descrição Breve
+        </th>
+        <th>
+            Data de Cadastro
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in ViewBag.imagensDestaqueLista) {
+    <tr>
+        <td>
+            
+            <div class="row">
+                <div class="col-lg-4">
+                    <img class="img-responsive img-thumbnail" src="~/images/@item.imagem" title="@item.imagem" alt="@item.imagem" />
+                </div>
+            </div>
+        </td>
+        <td>
+            @item.descricaoBreveImagem
+        </td>
+        <td>
+            @item.dataCadastro
+        </td>
+        <td>
+           
+            @Html.ActionLink("Detalhes", "Details", new { id=item.id }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

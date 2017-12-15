@@ -1,0 +1,44 @@
+﻿@model casamento.Areas.admin.Models.Endereco
+
+
+@{
+    ViewBag.Title = "Área Administrativa - Endereço";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Endereco</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.linkLocalizacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.linkLocalizacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descricaoEndereco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descricaoEndereco)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tituloEndereco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tituloEndereco)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

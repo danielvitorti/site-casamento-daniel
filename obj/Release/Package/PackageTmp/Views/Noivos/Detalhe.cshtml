@@ -1,0 +1,24 @@
+﻿@model casamento.Models.Noivos
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutSinglePage.cshtml";
+}
+@foreach (var item in ViewBag.noivo)
+{
+<div align="center">
+
+    <h2>@item.nome</h2>
+    <br />
+    Aqui vai a imagem
+</div>
+
+<p align="justify">
+    @item.descricao
+
+</p>
+}
+
+
+
+

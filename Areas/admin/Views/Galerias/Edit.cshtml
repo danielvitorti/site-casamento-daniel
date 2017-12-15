@@ -1,0 +1,71 @@
+﻿@model casamento.Areas.admin.Models.Galeria
+
+@{
+    ViewBag.Title = "Área Administrativa - Alterar galeria de imagens cadastrada";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Alterar galeria de imagens</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Galeria de imagens</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.nomeGaleria, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.nomeGaleria, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.nomeGaleria, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.destaque, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.destaque, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.destaque, "", new { @class = "text-danger" })
+
+                <select name="destaque" class="form-control">
+                    @{ var selecionado = null;
+                        
+                        if (Model.destaque = '0')
+                        {
+                            selecionado = 'selected';
+                        }
+                        if (Model.destaque = '1')
+                        {
+                            selecionado = 'selected';
+                        }
+
+                    }
+                    
+                    <option value="0" @selecionado>Não</option>
+                    <option value="1" @selecionado>Sim</option>
+                </select>
+
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Alterar" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Voltar para a listagem de padrinhos", "Index")
+</div>

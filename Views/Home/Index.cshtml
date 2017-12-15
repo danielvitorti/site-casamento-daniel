@@ -1,0 +1,252 @@
+﻿
+@{
+    ViewBag.Title = "Início";
+}
+
+<!-- /////////////////////////////////////////Content -->
+<div id="page-content">
+
+    <!-- ////////////Content Box 01 -->
+    <section class="box-content box-1">
+        <div class="container">
+            <div class="row">
+
+                @foreach (var item in ViewBag.noivosDestaque)
+                {
+                    <div class="col-sm-6 ">
+                        <div class="box-item">
+                            <a href="#"><img src="~/images/@item.imagem" title="icon-name" class="img-circle"></a>
+                            <h3>@item.nome</h3>
+                            <p>
+
+                                @item.introducao
+                            </p>                            
+                        </div>
+                    </div>
+                }
+             
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12">
+                    <audio src="~/Content/audio/eles_se_amam.mp3" preload="auto" controls autoplay></audio>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ////////////Content Box 02 -->
+    <section class="box-content box-2 box-style-1">
+        <div class="container">
+            <div class="row heading">
+                <div class="col-lg-12">
+                    <h2>CONTAGEM REGRESSIVA</h2>
+                    <hr class="line">
+                    <!--<div class="intro">Lorem ipsum dolor sit amet</div> -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="box-item">
+                    <div class="centered text-center" id="myCounter"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ////////////Content Box 03 -->
+    <section class="box-content box-3">
+        <div class="container">
+            <div class="row heading">
+                <div class="col-lg-12">
+                    <h2>BREVE GALERIA DE FOTOS</h2>
+                    <hr class="line">
+                    <div class="intro">Confira algumas de nossas fotos. Em breve virão mais! </div>
+                </div>
+            </div>
+            <div class="content">
+            <div class="row box-item">
+                <ul id="da-thumbs" class="da-thumbs">
+
+                    @foreach (var item in ViewBag.imagensGaleriaDestaque)
+                    {
+                        <li>
+                            <a href="#">
+                                <img src="~/images/@item.imagemGaleria" class="img-responsive" />
+                                <div><span>@item.nomeImagemGaleria</span></div>
+                            </a>
+                        </li>
+
+                    }
+
+                </ul>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ////////////Content Box 04 -->
+@foreach (var item in ViewBag.frase)
+{
+    <section class="box-content box-4 box-style-2">
+        <div class="container">
+            <div class="row">
+                <div class="box-item">
+                    <blockquote><p>@item.frase</p></blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+}
+    <!-- ////////////Content Box 05 -->
+    <!--
+            <section class="box-content box-5">
+        <div class="container">
+            <div class="row heading">
+                <div class="col-lg-12">
+                    <h2>BRIDESMAID & GROOMSMEN</h2>
+                    <hr class="line">
+                    <div class="intro">Lorem ipsum dolor sit amet</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row box-item">
+                        <div class="col-md-3 center">
+                            <img src="~/images/ava-1
+        " class="img-circle" />
+                        </div>
+                        <div class="col-md-9">
+                            <div class="wrapper">
+                                <h3>The title on the article</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra convallis auctor. Sed accumsan libero quis mi commodo et suscipit enim lacinia. Morbi rutrum vulputate est sed faucibus.</p>
+                                <a class="btn btn-skin" href="#">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row box-item">
+                        <div class="col-md-3 fix-right center">
+                            <img src="~/images/ava-3.jpg" class="img-circle" />
+                        </div>
+                        <div class="col-md-9">
+                            <div class="wrapper">
+                                <h3 class="fix-right">The title on the article</h3>
+                                <p class="fix-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra convallis auctor. Sed accumsan libero quis mi commodo et suscipit enim lacinia. Morbi rutrum vulputate est sed faucibus.</p>
+                                <a class="btn btn-skin fix-right" href="#">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row box-item">
+                        <div class="col-md-3 center">
+                            <img src="~/images/ava-1.jpg" class="img-circle" />
+                        </div>
+                        <div class="col-md-9">
+                            <div class="wrapper">
+                                <h3>The title on the article</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra convallis auctor. Sed accumsan libero quis mi commodo et suscipit enim lacinia. Morbi rutrum vulputate est sed faucibus.</p>
+                                <a class="btn btn-skin" href="#">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row box-item">
+                        <div class="col-md-3 center">
+                            <img src="~/images/ava-2.jpg" class="img-circle" />
+                        </div>
+                        <div class="col-md-9">
+                            <div class="wrapper">
+                                <h3>The title on the article</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra convallis auctor. Sed accumsan libero quis mi commodo et suscipit enim lacinia. Morbi rutrum vulputate est sed faucibus.</p>
+                                <a class="btn btn-skin" href="#">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row box-item">
+                        <div class="col-md-3 fix-right center">
+                            <img src="~/images/ava-4.jpg" class="img-circle" />
+                        </div>
+                        <div class="col-md-9">
+                            <div class="wrapper">
+                                <h3 class="fix-right">The title on the article</h3>
+                                <p class="fix-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra convallis auctor. Sed accumsan libero quis mi commodo et suscipit enim lacinia. Morbi rutrum vulputate est sed faucibus.</p>
+                                <a class="btn btn-skin fix-right" href="#">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row box-item">
+                        <div class="col-md-3 center">
+                            <img src="~/images/ava-5.jpg" class="img-circle" />
+                        </div>
+                        <div class="col-md-9">
+                            <div class="wrapper">
+                                <h3>The title on the article</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra convallis auctor. Sed accumsan libero quis mi commodo et suscipit enim lacinia. Morbi rutrum vulputate est sed faucibus.</p>
+                                <a class="btn btn-skin" href="#">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    -->
+    <!-- ////////////Content Box 06 -->
+    <!--
+    <section class="box-content box-6">
+        <div class="container">
+            <div class="row heading">
+                <div class="col-lg-12">
+                    <h2>NOSSA HISTÓRIA</h2>
+                    <hr class="line">
+                    <div class="intro">Confira nossa breve história</div>
+                </div>
+            </div>
+            <div class="row">
+                
+
+                    @foreach (var item in ViewBag.historiaDestaque)
+                    {
+                        <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 ">
+                            <div class="box-item ">
+                                <img src="~/images/@item.imagemHistoria" />
+                                @if (item.titulo != "")
+                                {
+                                <div class="content">
+                                    <h3>@item.titulo</h3>
+                                    <p>@item.descricaoHistoria</p>
+                                    
+                                </div>
+                                }
+
+                            </div>
+                        </div>
+
+                    }
+                        
+        </div>
+    </section>
+    -->
+
+    <!-- ////////////Content Box 07 -->
+
+
+        @foreach (var item in ViewBag.endereco)
+        {
+
+            <section class="box-content box-7">
+                <div class="clearfix">
+                    <div class="heading">
+                        <h2>@item.tituloEndereco</h2>
+                        <hr class="line">
+                        <div class="intro">@item.descricaoEndereco</div>
+                    </div>
+                    <div class="box-item">
+                        @Html.Raw(@item.linkLocalizacao)
+                        
+                    </div>
+                </div>
+            </section>
+
+        }
+    
+</div>

@@ -1,0 +1,35 @@
+﻿@model IEnumerable<casamento.Areas.admin.Models.Convidados>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Convidados</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar novo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Nome
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in ViewBag.convidadosLista) {
+    <tr>
+        <td>
+            @item.nome
+        </td>
+        <td>
+            @Html.ActionLink("Alterar", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.id }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

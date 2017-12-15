@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Convidados";
+    Layout = "~/Views/Shared/_LayoutSinglePage.cshtml";
+}
+
+<h2>Nossos convidados</h2>
+<br />
+
+@foreach (var item in ViewBag.convidadosLista) {
+    <p><i>@item.nome</i></p>
+}
